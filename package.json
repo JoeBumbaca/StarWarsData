@@ -1,0 +1,31 @@
+{
+  "name": "starwas",
+  "version": "1.0.0",
+  "description": "Star Wars Data Visualization",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoeBumbaca/StarWarsData.git"
+  },
+  "author": "Joe Bumbaca",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoeBumbaca/StarWarsData/issues"
+  },
+  "homepage": "https://github.com/JoeBumbaca/StarWarsData#readme",
+  "dependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-loader": "^8.0.6",
+    "d3": "^5.9.7",
+    "lodash": "^4.17.14",
+    "webpack": "^4.36.1",
+    "webpack-cli": "^3.3.6"
+  }
+}
