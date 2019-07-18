@@ -1,7 +1,7 @@
 # Star Wars Data
 ## Background and Overview
 * `Star Wars Data` data takes in many pieces of data from an external API and displays this 
-data in fun and exciting ways!  There are several categories of data, as defined by the API.  The categories will revolve around the people, starships and planets from the Star Wars universe.  All information used will be gathered from [Star Wars API](https://swapi.co)
+data in fun and exciting ways!  There are several categories of data, as defined by the API.  The categories will revolve around the people, starships and planets from the Star Wars universe.  All information used will be gathered from [Star Wars API](https://swapi.co).
 ## Functionality and MVP Features
 * In `Star Wars Data` users will be able to:
   * Interact with several visual represeentations of data
@@ -17,5 +17,14 @@ data in fun and exciting ways!  There are several categories of data, as defined
 * Create entry file and basic file skeleton
 * Spend most of the day with the D3 docs
 ### Day 2
-
+* Get the required data from the API.
+* Acheive rudimentary displays of the data
+### Day 3
+* Incorporate nested data into pop-ups, etc.
+* Incorporate at minimum Star Wars theme song and mute button
+### Day 4
+* Finish overall styling of page
+  * Font compatability
+  * Centering, margin/padding of individual items on page
+* Deploy to Heroku
 
