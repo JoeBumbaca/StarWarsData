@@ -1,5 +1,4 @@
 export const chart = () => {
-  d3.select("body").style("background-color", "lightgrey");
 
   let chart = d3.select('#chart')
     .append("svg")

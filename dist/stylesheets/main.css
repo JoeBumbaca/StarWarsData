@@ -1,0 +1,22 @@
+.mainPage {
+  background-image: url("../images/space.jpeg");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.images {
+  height: 350px;
+  display: flex;
+  margin: 55px 0px;
+}
+
+.img1 {
+  width: 25%;
+}
+.img2 {
+  min-width: 50%;
+}
+.img3 {
+  width: 25%;
+}
