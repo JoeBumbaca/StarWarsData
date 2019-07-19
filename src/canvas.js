@@ -19,4 +19,27 @@ var line = canvas.append("line")
   .attr("x2", 500).attr("y2", 500)
   .attr("stroke-width", 9)
   .attr("stroke", "black");
+
+
+    // let circles = chart.selectAll("circle")
+    //   .data(data);
+
+    // circles.enter()
+    //   .append("circle")
+    //     .attr("cx", (d, i) => {
+    //         return (i * 50) + 150;
+    //     })
+    //     .attr("cy", 100)
+    //     .attr("r", (d) => {
+    //         return d.mass / 3;
+    //     })
+    //     .attr("fill", (d) => {
+    //       if (d.name === "C-3PO") {
+    //         return "blue"
+    //       } else {
+    //         return "fuchsia"
+    //       }
+    //     })
+    //     .attr("stroke", "yellow")
+    //     .attr("stroke-width", 2)
 };
