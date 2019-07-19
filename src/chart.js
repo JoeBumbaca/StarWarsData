@@ -7,6 +7,8 @@ export const chart = () => {
 
   let flag = true;
 
+  let t = d3.transition().duration(2500);
+
   let chart = d3.select('#chart')
     .append("svg")
     .attr("height", height + margin.top + margin.bottom)
@@ -40,14 +42,14 @@ export const chart = () => {
     .attr("stroke", "fuchsia")
     .attr("fill", "fuchsia");
 
-  g.append("text")
+  let yLabel = g.append("text")
     .attr("class", "yAxisLabel")
     .attr("x", - (height / 2))
     .attr("y", -60)
     .attr("font-size", "30px")
     .attr("text-anchor", "middle")
     .attr("transform", "rotate(-90)")
-    .text("Height (cm)")
+    .text("Height")
     .attr("stroke", "fuchsia")
     .attr("fill", "fuchsia");
 
@@ -60,21 +62,21 @@ export const chart = () => {
 
     
 
-    // d3.interval(() => {
-    //   update(data)
-    //   flag = !flag
-    // }, 1000);
+  d3.interval(() => {
+    update(data)
+    flag = !flag
+    }, 3000);
     update(data);
   })
 
   const update = (data) => {
     let value = flag ? "height" : "mass";
-    y.domain([0, d3.max(data, d => { return d.height })]);
+    y.domain([0, d3.max(data, d => { return d[value] })]);
     x.domain(data.map(d => { return d.name }));
 
     // X Axis
     let xAxisCall = d3.axisBottom(x);
-    xAxisGroup.call(xAxisCall)
+    xAxisGroup.transition(t).call(xAxisCall)
       .selectAll("text")
       .attr("y", "10")
       .attr("x", "-5")
@@ -86,9 +88,9 @@ export const chart = () => {
     let yAxisCall = d3.axisLeft(y)
       .ticks(7)
       .tickFormat(d => {
-        return d + "cm"
+        return d
       });
-    yAxisGroup.call(yAxisCall)
+    yAxisGroup.transition(t).call(yAxisCall)
       .selectAll("text")
       .attr("stroke", "fuchsia");
 
@@ -97,22 +99,32 @@ export const chart = () => {
       .data(data);
 
     // EXIT old elements not present in data.
-      rectangles.exit().remove();
+    rectangles.exit()
+      .attr("fill", "yellow")
+    .transition(t)
+      .attr("y", y(0))
+      .attr("height", 0)
+      .remove();
     // UPDATE old elements present in new data.
-      rectangles
-        .append("rect")
-        .attr("y", (d) => { return y(d.height) })
-        .attr("height", (d) => { return height - y(d.height) })
+    rectangles.transition(t)
+        .attr("y", (d) => { return y(d[value]) })
+        .attr("height", (d) => { return height - y(d[value]) })
         .attr("width", x.bandwidth)
         .attr("x", (d, i) => { return x(d.name) })
     // ENTER new elements present in new data.
     rectangles.enter()
       .append("rect")
-      .attr("y", (d) => { return y(d.height) })
-      .attr("height", (d) => { return height - y(d.height) })
       .attr("width", x.bandwidth)
       .attr("x", (d, i) => { return x(d.name) })
-      .attr("fill", "yellow");
+      .attr("fill", "yellow")
+      .attr("y", y(0))
+      .attr("height", 0)
+    .transition(t)
+      .attr("y", (d) => { return y(d[value]) })
+      .attr("height", (d) => { return height - y(d[value]) });
+
+    let label = flag ? "Height (cm)" : "Mass (kg)"
+    yLabel.text(label);
   }
 
 };

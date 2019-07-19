@@ -18,7 +18,7 @@ var line = canvas.append("line")
   .attr("x1", 500).attr("y1", 0)
   .attr("x2", 500).attr("y2", 500)
   .attr("stroke-width", 9)
-  .attr("stroke", "black");
+  .attr("stroke", "orange");
 
 
     // let circles = chart.selectAll("circle")
