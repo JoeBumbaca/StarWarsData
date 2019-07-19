@@ -5,6 +5,8 @@ export const chart = () => {
   let width = 1300 - margin.left - margin.right;
   let height = 700 - margin.top - margin.bottom;
 
+  let flag = true;
+
   let chart = d3.select('#chart')
     .append("svg")
     .attr("height", height + margin.top + margin.bottom)
@@ -26,7 +28,7 @@ export const chart = () => {
   let x = d3.scaleBand()
     .range([0, width])
     .paddingInner(0.3)
-    .paddingOuter(0.1)
+    .paddingOuter(0.3)
 
   g.append("text")
     .attr("class", "xAxisLabel")
@@ -58,17 +60,19 @@ export const chart = () => {
 
     
 
-    d3.interval(() => {
-      update(data)
-    }, 1000);
+    // d3.interval(() => {
+    //   update(data)
+    //   flag = !flag
+    // }, 1000);
     update(data);
   })
 
   const update = (data) => {
-
+    let value = flag ? "height" : "mass";
     y.domain([0, d3.max(data, d => { return d.height })]);
     x.domain(data.map(d => { return d.name }));
 
+    // X Axis
     let xAxisCall = d3.axisBottom(x);
     xAxisGroup.call(xAxisCall)
       .selectAll("text")
@@ -78,6 +82,7 @@ export const chart = () => {
       .attr("transform", "rotate(-40)")
       .attr("stroke", "fuchsia");
 
+    // Y Axis
     let yAxisCall = d3.axisLeft(y)
       .ticks(7)
       .tickFormat(d => {
@@ -87,21 +92,26 @@ export const chart = () => {
       .selectAll("text")
       .attr("stroke", "fuchsia");
 
+    // JOIN new data with old elements.
     let rectangles = g.selectAll("rect")
       .data(data);
 
+    // EXIT old elements not present in data.
+      rectangles.exit().remove();
+    // UPDATE old elements present in new data.
+      rectangles
+        .append("rect")
+        .attr("y", (d) => { return y(d.height) })
+        .attr("height", (d) => { return height - y(d.height) })
+        .attr("width", x.bandwidth)
+        .attr("x", (d, i) => { return x(d.name) })
+    // ENTER new elements present in new data.
     rectangles.enter()
       .append("rect")
-      .attr("y", (d) => {
-        return y(d.height)
-      })
-      .attr("height", (d) => {
-        return height - y(d.height);
-      })
+      .attr("y", (d) => { return y(d.height) })
+      .attr("height", (d) => { return height - y(d.height) })
       .attr("width", x.bandwidth)
-      .attr("x", (d, i) => {
-        return x(d.name);
-      })
+      .attr("x", (d, i) => { return x(d.name) })
       .attr("fill", "yellow");
   }
 
