@@ -3,8 +3,8 @@ export const chart = () => {
 
   let chart = d3.select('#chart')
     .append("svg")
-    .attr("height", 100)
-    .attr("width", 200);
+    .attr("height", 500)
+    .attr("width", 500);
 
   d3.json("../data/people.json")
     .then(data => {
@@ -37,15 +37,18 @@ export const chart = () => {
     //     .attr("stroke-width", 2)
 
     var y = d3.scaleLinear()
-      .domain([0, 334])
-      .range([0, 100]);
+      .domain([0, d3.max(data, d => {
+        return d.height * 2;
+      })
+    ])
+      .range([0, 500]);
 
     var x = d3.scaleBand()
       .domain(data.map(d => {
         return d.name
       }))
-      .range([0, 150])
-      .paddingInner(0.4)
+      .range([0, 500])
+      .paddingInner(0.5)
       .paddingOuter(0.2)
 
     let rectangles = chart.selectAll("rect")
@@ -61,8 +64,6 @@ export const chart = () => {
         return x(d.name);
       })
       .attr("fill", "yellow")
-      .attr("stroke", "navy")
-
   })
 
 };
