@@ -1,8 +1,10 @@
 import { canvas } from './canvas';
-import { chart, fetch } from './chart';
+import { chart } from './chart';
+import { bubble_chart } from './bubble_chart';
 
 
 document.addEventListener("DOMContentLoaded", () => {
   canvas();
   chart();
+  bubble_chart();
 });
