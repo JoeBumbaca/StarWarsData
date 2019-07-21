@@ -8,7 +8,7 @@
     "gravity": "1 standard",
     "terrain": "desert",
     "surface_water": "1",
-    "population": "200000",
+    "population": "2000000",
     "residents": [
       "https://swapi.co/api/people/1/",
       "https://swapi.co/api/people/2/",
@@ -41,7 +41,7 @@
     "gravity": "1 standard",
     "terrain": "grasslands, mountains",
     "surface_water": "40",
-    "population": "2000000000",
+    "population": "2000000",
     "residents": [
       "https://swapi.co/api/people/5/",
       "https://swapi.co/api/people/68/",
@@ -58,13 +58,13 @@
   {
     "name": "Yavin IV",
     "rotation_period": "24",
-    "orbital_period": "4818",
+    "orbital_period": "518",
     "diameter": "10200",
     "climate": "temperate, tropical",
     "gravity": "1 standard",
     "terrain": "jungle, rainforests",
     "surface_water": "8",
-    "population": "1000",
+    "population": "10000",
     "residents": [],
     "films": [
       "https://swapi.co/api/films/1/"
@@ -82,7 +82,7 @@
     "gravity": "1.1 standard",
     "terrain": "tundra, ice caves, mountain ranges",
     "surface_water": "100",
-    "population": "10",
+    "population": "1000",
     "residents": [],
     "films": [
       "https://swapi.co/api/films/2/"
@@ -100,7 +100,7 @@
     "gravity": "N/A",
     "terrain": "swamp, jungles",
     "surface_water": "8",
-    "population": "10",
+    "population": "1000",
     "residents": [],
     "films": [
       "https://swapi.co/api/films/2/",
@@ -114,7 +114,7 @@
   {
     "name": "Bespin",
     "rotation_period": "12",
-    "orbital_period": "5110",
+    "orbital_period": "110",
     "diameter": "118000",
     "climate": "temperate",
     "gravity": "1.5 (surface), 1 standard (Cloud City)",
@@ -140,7 +140,7 @@
     "gravity": "0.85 standard",
     "terrain": "forests, mountains, lakes",
     "surface_water": "8",
-    "population": "30000000",
+    "population": "3000000",
     "residents": [
       "https://swapi.co/api/people/30/"
     ],
@@ -160,7 +160,7 @@
     "gravity": "1 standard",
     "terrain": "grassy hills, swamps, forests, mountains",
     "surface_water": "12",
-    "population": "4500000000",
+    "population": "4500000",
     "residents": [
       "https://swapi.co/api/people/3/",
       "https://swapi.co/api/people/21/",
@@ -193,7 +193,7 @@
     "gravity": "1 standard",
     "terrain": "cityscape, mountains",
     "surface_water": "unknown",
-    "population": "1000000000000",
+    "population": "1000000",
     "residents": [
       "https://swapi.co/api/people/34/",
       "https://swapi.co/api/people/55/",
@@ -218,7 +218,7 @@
     "gravity": "1 standard",
     "terrain": "ocean",
     "surface_water": "100",
-    "population": "1000000000",
+    "population": "1000000",
     "residents": [
       "https://swapi.co/api/people/22/",
       "https://swapi.co/api/people/72/",
@@ -234,13 +234,13 @@
   {
     "name": "Geonosis",
     "rotation_period": "30",
-    "orbital_period": "256",
+    "orbital_period": "156",
     "diameter": "11370",
     "climate": "temperate, arid",
     "gravity": "0.9 standard",
     "terrain": "rock, desert, mountain, barren",
     "surface_water": "5",
-    "population": "100000000000",
+    "population": "1000000",
     "residents": [
       "https://swapi.co/api/people/63/"
     ],
@@ -254,13 +254,13 @@
   {
     "name": "Utapau",
     "rotation_period": "27",
-    "orbital_period": "351",
+    "orbital_period": "151",
     "diameter": "12900",
     "climate": "temperate, arid, windy",
     "gravity": "1 standard",
     "terrain": "scrublands, savanna, canyons, sinkholes",
     "surface_water": "0.9",
-    "population": "95000000",
+    "population": "9500000",
     "residents": [
       "https://swapi.co/api/people/83/"
     ],
@@ -280,7 +280,7 @@
     "gravity": "1 standard",
     "terrain": "volcanoes, lava rivers, mountains, caves",
     "surface_water": "0",
-    "population": "20000",
+    "population": "200000",
     "residents": [],
     "films": [
       "https://swapi.co/api/films/6/"
@@ -298,7 +298,7 @@
     "gravity": "1 standard",
     "terrain": "jungle, forests, lakes, rivers",
     "surface_water": "60",
-    "population": "45000000",
+    "population": "4500000",
     "residents": [
       "https://swapi.co/api/people/13/",
       "https://swapi.co/api/people/80/"
@@ -319,7 +319,7 @@
     "gravity": "1 standard",
     "terrain": "glaciers, mountains, ice canyons",
     "surface_water": "unknown",
-    "population": "19000000",
+    "population": "1900000",
     "residents": [],
     "films": [
       "https://swapi.co/api/films/6/"
@@ -375,7 +375,7 @@
     "gravity": "unknown",
     "terrain": "caves, desert, mountains, volcanoes",
     "surface_water": "unknown",
-    "population": "1400000000",
+    "population": "10000000",
     "residents": [],
     "films": [
       "https://swapi.co/api/films/6/"
@@ -393,7 +393,7 @@
     "gravity": "1 standard",
     "terrain": "cityscape",
     "surface_water": "unknown",
-    "population": "22000000000",
+    "population": "12000000",
     "residents": [
       "https://swapi.co/api/people/12/"
     ],
@@ -411,7 +411,7 @@
     "gravity": "1 standard",
     "terrain": "plains, urban, hills, forests",
     "surface_water": "70",
-    "population": "3000000000",
+    "population": "3000000",
     "residents": [
       "https://swapi.co/api/people/14/",
       "https://swapi.co/api/people/18/"
@@ -430,7 +430,7 @@
     "gravity": "1 standard",
     "terrain": "jungles, oceans, urban, swamps",
     "surface_water": "60",
-    "population": "1300000000",
+    "population": "1300000",
     "residents": [
       "https://swapi.co/api/people/15/"
     ],
@@ -448,7 +448,7 @@
     "gravity": "1 standard",
     "terrain": "urban, oceans, swamps, bogs",
     "surface_water": "unknown",
-    "population": "7000000000",
+    "population": "7000000",
     "residents": [
       "https://swapi.co/api/people/16/"
     ],
@@ -466,7 +466,7 @@
     "gravity": "1 standard",
     "terrain": "oceans, savannas, mountains, grasslands",
     "surface_water": "unknown",
-    "population": "1000",
+    "population": "10000",
     "residents": [],
     "films": [],
     "created": "2014-12-10T17:23:29.896000Z",
@@ -482,7 +482,7 @@
     "gravity": "unknown",
     "terrain": "rocky islands, oceans",
     "surface_water": "98",
-    "population": "62000000",
+    "population": "6200000",
     "residents": [
       "https://swapi.co/api/people/19/"
     ],
@@ -500,7 +500,7 @@
     "gravity": "1 standard",
     "terrain": "plains, seas, mesas",
     "surface_water": "10",
-    "population": "4000000000",
+    "population": "4000000",
     "residents": [],
     "films": [
       "https://swapi.co/api/films/2/"
@@ -518,7 +518,7 @@
     "gravity": "1",
     "terrain": "oceans, reefs, islands",
     "surface_water": "100",
-    "population": "27000000000",
+    "population": "2700000",
     "residents": [
       "https://swapi.co/api/people/27/"
     ],
@@ -536,7 +536,7 @@
     "gravity": "1",
     "terrain": "plains, forests",
     "surface_water": "40",
-    "population": "1200000000",
+    "population": "1200000",
     "residents": [
       "https://swapi.co/api/people/28/"
     ],
@@ -554,7 +554,7 @@
     "gravity": "1",
     "terrain": "mountains, volcanoes, rocky deserts",
     "surface_water": "5",
-    "population": "18500000000",
+    "population": "1850000",
     "residents": [
       "https://swapi.co/api/people/31/"
     ],
@@ -572,7 +572,7 @@
     "gravity": "1",
     "terrain": "mountains, volcanoes, rocky deserts",
     "surface_water": "5",
-    "population": "18500000000",
+    "population": "18500000",
     "residents": [
       "https://swapi.co/api/people/31/"
     ],
@@ -590,7 +590,7 @@
     "gravity": "1.56",
     "terrain": "swamps, deserts, jungles, mountains",
     "surface_water": "unknown",
-    "population": "2000000000",
+    "population": "11000000",
     "residents": [
       "https://swapi.co/api/people/41/"
     ],
@@ -608,7 +608,7 @@
     "gravity": "0.9",
     "terrain": "forests, deserts, savannas",
     "surface_water": "unknown",
-    "population": "5200",
+    "population": "52000",
     "residents": [
       "https://swapi.co/api/people/44/"
     ],
@@ -626,7 +626,7 @@
     "gravity": "1",
     "terrain": "mountains, valleys, deserts, tundra",
     "surface_water": "5",
-    "population": "1500000000",
+    "population": "15000000",
     "residents": [
       "https://swapi.co/api/people/45/",
       "https://swapi.co/api/people/46/"
@@ -645,7 +645,7 @@
     "gravity": "1",
     "terrain": "urban, barren",
     "surface_water": "unknown",
-    "population": "421000000",
+    "population": "4210000",
     "residents": [
       "https://swapi.co/api/people/48/"
     ],
@@ -681,7 +681,7 @@
     "gravity": "1",
     "terrain": "lakes, islands, swamps, seas",
     "surface_water": "80",
-    "population": "500000000",
+    "population": "500000",
     "residents": [
       "https://swapi.co/api/people/53/"
     ],

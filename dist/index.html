@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="./images/lightsabers.jpeg" type="image/x-icon">
   <link rel="stylesheet" href="./stylesheets/cssReset.css">
   <link rel="stylesheet" href="./stylesheets/main.css">
   <script src="https://d3js.org/d3.v5.min.js"></script>
@@ -17,9 +18,16 @@
       <img class="img2" src="./images/logo.png" alt="star wars">
       <img class="img3" src="./images/empire.png" alt="empire">
     </div>
-    <!-- <div id="canvas"></div> -->
-    <div id="chart"></div>
-    <div id="bubble_chart"></div>
+    <div class="audio-controls">
+      <button class="button" onclick="document.getElementsByTagName('audio')[0].play();">Music Please</button>
+      <button onclick="document.getElementsByTagName('audio')[0].pause();">Mute</button>
+      <audio autoplay preload="auto" loop src="./images/11 The Throne Room_End Title.mp3"></audio>
+    </div>
+    <div class="data">
+      <div id="chart"></div>
+      <div id="bubble_chart"></div>
+    </div>
   </div>
 </body>
 </html>
+

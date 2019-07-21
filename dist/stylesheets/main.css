@@ -32,3 +32,29 @@
 .y-axis {
   color: fuchsia;
 }
+
+#bubble_chart {
+  margin-bottom: 100px;
+}
+
+.bubble-x-axis {
+  color: lime;
+}
+
+.bubble-y-axis {
+  color: lime;
+}
+
+.audio_controls {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button {
+  margin-left: 1200px;
+}
+
+button {
+  background-color: grey;
+  border: 1px solid black;
+}
