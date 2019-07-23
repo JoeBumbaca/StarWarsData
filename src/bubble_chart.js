@@ -51,6 +51,11 @@ export const bubble_chart = () => {
         datum.diameter = +datum.diameter;
         datum.population = +datum.population;
       })
+    
+      // let tip = d3.tip().attr("class", "tool-tip")
+      //   .html(d => { return d })
+
+      // g.call(tip);
 
       let y = d3.scaleLinear()
         .domain([0, d3.max(data, d => { return (d.orbital_period) })])
@@ -103,6 +108,8 @@ export const bubble_chart = () => {
               return "red"
           }
         })
-        .attr("opacity", .75);
+        .attr("opacity", .75)
+        .on("mouseover", tip.show)
+        .on("mouseout", tip.hide);
     })
 }
