@@ -106,19 +106,42 @@ export const bubble_chart = () => {
           }
         })
         .attr("opacity", .75)
+        .on("mouseover", showTooltip)
+        .on("mousemove", moveTooltip)
+        .on("mouseleave", hideTooltip)
+        
     })
 
     let tooltip = d3.select("#bubble_chart")
       .append("div")
-        .style("position", "absolute")
-        .style("visibility", "visible")
-        .style("background-color", "white")
-        
-        .text("I am a tooltip!");
+        .style("opacicty", 0)
+        .attr("class", "tiooltip")
+        .style("background-color", "grey")
+        .style("border-radius", "5px")
+        .style("padding", "10px")
+        .style("color", "black");
 
-    d3.select("#planet")
-      .on("mouseover", function(){ return tooltip.style("visibility", "visible"); })
-      .on("mousemove", function(){ return tooltip.style("top", d3.select(this).attr("cy") + "px")
-        .style("left", d3.select(this).attr("cx") + "px"); })
-      .on("mouseout", function(){ return tooltip.style("visibility", "hidden"); })
+    let showTooltip = function(d) {
+      tooltip
+        .transition()
+        .duration(200)
+      tooltip
+        .style("opacity", 1)
+        .html("Name: " + d.name + "<br></br>" + "Diameter: " + d.diameter)
+        .style("left", (d3.mouse(this)[0]) + "px")
+        .style("top", (d3.mouse(this)[1]) + "px")
+    }
+
+    let moveTooltip = function() {
+      tooltip
+        .style("left", (d3.mouse(this)[0]) + "px")
+        .style("top", (d3.mouse(this)[1]) + "px")
+    }
+
+    let hideTooltip = function() {
+      tooltip
+        .transition()
+        .duration(200)
+        .style("opacity", 0)
+    }
 }
