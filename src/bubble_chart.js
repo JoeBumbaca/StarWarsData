@@ -51,11 +51,7 @@ export const bubble_chart = () => {
         datum.diameter = +datum.diameter;
         datum.population = +datum.population;
       })
-    
-      // let tip = d3.tip().attr("class", "tool-tip")
-      //   .html(d => { return d })
-
-      // g.call(tip);
+  
 
       let y = d3.scaleLinear()
         .domain([0, d3.max(data, d => { return (d.orbital_period) })])
@@ -93,6 +89,7 @@ export const bubble_chart = () => {
 
       circles.enter()
         .append("circle")
+        .attr("id", "planet")
         .attr("cx", d => { return (x(d.population) + 20 )})
         .attr("cy", d => { return height - (y(d.orbital_period) + 12) })
         .attr("r", d => { return r(d.diameter) })
@@ -109,7 +106,19 @@ export const bubble_chart = () => {
           }
         })
         .attr("opacity", .75)
-        .on("mouseover", tip.show)
-        .on("mouseout", tip.hide);
     })
+
+    let tooltip = d3.select("#bubble_chart")
+      .append("div")
+        .style("position", "absolute")
+        .style("visibility", "visible")
+        .style("background-color", "white")
+        
+        .text("I am a tooltip!");
+
+    d3.select("#planet")
+      .on("mouseover", function(){ return tooltip.style("visibility", "visible"); })
+      .on("mousemove", function(){ return tooltip.style("top", d3.select(this).attr("cy") + "px")
+        .style("left", d3.select(this).attr("cx") + "px"); })
+      .on("mouseout", function(){ return tooltip.style("visibility", "hidden"); })
 }
