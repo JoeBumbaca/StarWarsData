@@ -32,7 +32,7 @@ export const chart = () => {
     .paddingInner(0.3)
     .paddingOuter(0.3)
 
-  g.append("text")
+  let xLabel = g.append("text")
     .attr("class", "xAxisLabel")
     .attr("x", width / 2)
     .attr("y", height + 120)
@@ -124,7 +124,9 @@ export const chart = () => {
       .attr("height", (d) => { return height - y(d[value]) });
 
     let label = flag ? "Height (cm)" : "Mass (kg)"
+    let xlabel = flag ? "Star Wars Character's Height" : "Star Wars Character's Weight"
     yLabel.text(label);
+    xLabel.text(xlabel);
   }
 
 };

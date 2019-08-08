@@ -90,8 +90,8 @@ export const bubble_chart = () => {
       circles.enter()
         .append("circle")
         .attr("class", "planet")
-        .attr("cx", d => { return (x(d.population) + 20 )})
-        .attr("cy", d => { return height - (y(d.orbital_period) + 12) })
+        .attr("cx", d => { return (x(d.population) + 20 ) })
+        .attr("cy", d => { return (y(d.orbital_period) + 20) })
         .attr("r", d => { return r(d.diameter) })
         .attr("fill", d => {
             switch(true) {
@@ -116,7 +116,7 @@ export const bubble_chart = () => {
       .append("div")
         .style("opacity", 0)
         .attr("class", "tooltip")
-        .style("background-color", "grey")
+        .style("background-color", "lime")
         .style("border-radius", "5px")
         .style("padding", "5px")
         .style("width", "190px")
@@ -130,7 +130,7 @@ export const bubble_chart = () => {
         .transition()
         .duration(50)
       tooltip
-        .style("opacity", 1)
+        .style("opacity", .85)
         .html("Name: " + d.name + "<br>" + 
               "Diameter: " + formatComma(d.diameter) + " km" + "<br>" + 
               "Population: " + formatComma(d.population) + "<br>" + 
@@ -154,4 +154,86 @@ export const bubble_chart = () => {
         .duration(50)
         .style("opacity", 0)
     }
+
+    let legend = d3.select("#bubble_chart")
+      .append("div")
+        .style("position", "absolute")
+        .style("left", "1000px")
+        .style("top", "20px")
+        .style("height", "150px")
+        .style("width", "190px")
+        .style("border", "1px solid lime")
+        .style("border-radius", "5px");
+
+    let marker1 = bubble_chart
+      .append("circle")
+        .style("position", "absolute")
+        .attr("cx", 1025)
+        .attr("cy", 50)
+        .attr("r", 9)
+        .style("fill", "lightgreen")
+        .style("opacity", .75);
+
+    let marker2 = bubble_chart
+      .append("circle")
+        .style("position", "absolute")
+        .attr("cx", 1025)
+        .attr("cy", 80)
+        .attr("r", 9)
+        .style("fill", "lightblue")
+        .style("opacity", .75);
+
+    let marker3 = bubble_chart
+      .append("circle")
+        .style("position", "absolute")
+        .attr("cx", 1025)
+        .attr("cy", 110)
+        .attr("r", 9)
+        .style("fill", "orange")
+        .style("opacity", .75);
+
+    let marker4 = bubble_chart
+      .append("circle")
+        .style("position", "absolute")
+        .attr("cx", 1025)
+        .attr("cy", 140)
+        .attr("r", 9)
+        .style("fill", "red")
+        .style("opacity", .75);
+
+    let text1 = bubble_chart
+      .append("text")
+        .style("position", "absolute")
+        .attr("x", 1050)
+        .attr("y", 56)
+        .text("< 20 hour day")
+        .style("color", "lime")
+        .style("fill", "lime");
+
+    let text2 = bubble_chart
+      .append("text")
+        .style("position", "absolute")
+        .attr("x", 1050)
+        .attr("y", 86)
+        .text("20 - 29 hour day")
+        .style("color", "lime")
+        .style("fill", "lime");
+
+    let text3 = bubble_chart
+      .append("text")
+        .style("position", "absolute")
+        .attr("x", 1050)
+        .attr("y", 116)
+        .text("30 - 39 hour day")
+        .style("color", "lime")
+        .style("fill", "lime");
+
+    let text4 = bubble_chart
+      .append("text")
+        .style("position", "absolute")
+        .attr("x", 1050)
+        .attr("y", 146)
+        .text(">= 40 hour day")
+        .style("color", "lime")
+        .style("fill", "lime");
 }
