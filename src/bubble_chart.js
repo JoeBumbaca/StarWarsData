@@ -9,7 +9,7 @@ export const bubble_chart = () => {
   let bubble_chart = d3.select('#bubble_chart')
     .append('svg')
     .attr("height", height + margin.top + margin.bottom)
-    .attr("width", width + margin.left + margin.right);
+    .attr("width", width + margin.left + margin.right)
   
   let g = bubble_chart.append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
@@ -89,7 +89,7 @@ export const bubble_chart = () => {
 
       circles.enter()
         .append("circle")
-        .attr("id", "planet")
+        .attr("class", "planet")
         .attr("cx", d => { return (x(d.population) + 20 )})
         .attr("cy", d => { return height - (y(d.orbital_period) + 12) })
         .attr("r", d => { return r(d.diameter) })
@@ -114,34 +114,44 @@ export const bubble_chart = () => {
 
     let tooltip = d3.select("#bubble_chart")
       .append("div")
-        .style("opacicty", 0)
-        .attr("class", "tiooltip")
+        .style("opacity", 0)
+        .attr("class", "tooltip")
         .style("background-color", "grey")
         .style("border-radius", "5px")
-        .style("padding", "10px")
-        .style("color", "black");
+        .style("padding", "5px")
+        .style("width", "190px")
+        .style("color", "black")
+        .style("position", "absolute");
+
+    let formatComma = d3.format(",");
 
     let showTooltip = function(d) {
       tooltip
         .transition()
-        .duration(200)
+        .duration(50)
       tooltip
         .style("opacity", 1)
-        .html("Name: " + d.name + "<br></br>" + "Diameter: " + d.diameter)
-        .style("left", (d3.mouse(this)[0]) + "px")
-        .style("top", (d3.mouse(this)[1]) + "px")
+        .html("Name: " + d.name + "<br>" + 
+              "Diameter: " + formatComma(d.diameter) + " km" + "<br>" + 
+              "Population: " + formatComma(d.population) + "<br>" + 
+              "Orbital Period: " + d.orbital_period + " days" + "<br>" + 
+              "Rotation Period: " + d.rotation_period + " hours" + "<br>" + 
+              "Climate: " + d.climate + "<br>" + 
+              "Terrain: " + d.terrain)
+        .style("left", (d3.mouse(this)[0] + 125) + "px")
+        .style("top", (d3.mouse(this)[1] + 40) + "px")
     }
 
     let moveTooltip = function() {
       tooltip
-        .style("left", (d3.mouse(this)[0]) + "px")
-        .style("top", (d3.mouse(this)[1]) + "px")
+        .style("left", (d3.mouse(this)[0] + 125) + "px")
+        .style("top", (d3.mouse(this)[1] + 40) + "px")
     }
 
     let hideTooltip = function() {
       tooltip
         .transition()
-        .duration(200)
+        .duration(50)
         .style("opacity", 0)
     }
 }

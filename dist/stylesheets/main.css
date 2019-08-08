@@ -35,6 +35,7 @@
 
 #bubble_chart {
   margin-bottom: 100px;
+  position: relative;
 }
 
 .bubble-x-axis {
