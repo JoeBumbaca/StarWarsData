@@ -8,7 +8,7 @@
 .images {
   height: 350px;
   display: flex;
-  margin: 55px 0px;
+  margin: 55px 0px 5px 0px;
 }
 
 .img1 {
@@ -62,6 +62,7 @@ button {
   border-radius: 4px;
   width: 90px;
   height: 25px;
+  margin-top: 20px;
 }
 
 .crawl {
@@ -69,11 +70,10 @@ button {
   position: relative;
   top: -100px;
   transform-origin: 50% 100%;
-  animation: crawl 70s linear;
+  animation: crawl 60s linear;
   display: flex;
   flex-direction: column;
   animation-iteration-count: infinite;
-  /* justify-content: center; */
 }
 
 .star-wars {
