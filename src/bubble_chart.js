@@ -8,8 +8,8 @@ export const bubble_chart = () => {
 
   let bubble_chart = d3.select('#bubble_chart')
     .append('svg')
-    .attr("height", height + margin.top + margin.bottom)
-    .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+      .attr("width", width + margin.left + margin.right)
   
   let g = bubble_chart.append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
@@ -28,7 +28,7 @@ export const bubble_chart = () => {
     .attr("y", height + 100)
     .attr("font-size", "30px")
     .attr("text-anchor", "middle")
-    .text("Population")
+    .text("Planet Population")
     .attr("stroke", "lime")
     .attr("fill", "lime");
 
