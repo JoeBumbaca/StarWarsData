@@ -3,7 +3,7 @@ export const circular = () => {
 
   let width = 1100 - margin.left - margin.right;
   let height = 800 - margin.top - margin.bottom;
-  let innerRadius = 5;
+  let innerRadius = 10;
   let outerRadius = Math.min(width, height) / 2;
 
   let circular = d3.select("#circular")
@@ -44,6 +44,7 @@ export const circular = () => {
         .enter()
         .append("path")
           .attr("fill", "blue")
+          .attr("stroke", "white")
           .attr("d", d3.arc()
             .innerRadius(innerRadius)
             .outerRadius( (d) => { return y((d.hyperdrive_rating)); })
