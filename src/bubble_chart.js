@@ -43,7 +43,7 @@ export const bubble_chart = () => {
     .attr("stroke", "lime")
     .attr("fill", "lime");
 
-  d3.json("StarWarsData/data/planets.json")
+  d3.json("./data/planets.json")
     .then(data => {
       data.forEach(datum => {
         datum.rotation_period = +datum.rotation_period;
