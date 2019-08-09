@@ -53,7 +53,7 @@ export const chart = () => {
     .attr("stroke", "fuchsia")
     .attr("fill", "fuchsia");
 
-  d3.json("../data/people.json")
+  d3.json("StarWarsData/data/people.json")
     .then(data => {
       data.forEach(datum => {
         datum.height = +datum.height;
