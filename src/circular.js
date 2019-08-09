@@ -15,7 +15,7 @@ export const circular = () => {
     .attr("transform", "translate(" + width / 1.5 + "," + (height / 2 + 100) + ")");
 
 
-  d3.json("StarWarsData/data/starships.json")
+  d3.json("/data/starships.json")
     .then(data => {
       data.forEach(datum => {
         datum.cost_in_credits = + datum.cost_in_credits;
