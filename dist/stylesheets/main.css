@@ -50,11 +50,8 @@
 .audio-controls {
   display: flex;
   justify-content: flex-end;
+  width: 100%;
 }
-
-/* .button {
-  margin-left: 1200px;
-} */
 
 button {
   background-color: grey;
