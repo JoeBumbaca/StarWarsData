@@ -47,14 +47,14 @@
   color: lime;
 }
 
-.audio_controls {
+.audio-controls {
   display: flex;
   justify-content: flex-end;
 }
 
-.button {
+/* .button {
   margin-left: 1200px;
-}
+} */
 
 button {
   background-color: grey;
