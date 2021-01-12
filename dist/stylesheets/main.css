@@ -8,7 +8,9 @@
 .images {
   height: 350px;
   display: flex;
-  margin: 55px 0px 5px 0px;
+  width: 85%;
+  justify-content: space-between;
+  filter: contrast(1.5)
 }
 
 .img1 {
@@ -34,7 +36,6 @@
 }
 
 #bubble_chart {
-  margin-top: 100px;
   margin-bottom: 100px;
   position: relative;
 }
@@ -51,15 +52,16 @@
   display: flex;
   justify-content: flex-end;
   width: 100%;
+  margin-bottom: 5px;
 }
 
 button {
   background-color: grey;
-  border: 1px solid black;
+  border: 1px solid rgb(204, 204, 180);
   border-radius: 4px;
   width: 90px;
   height: 25px;
-  margin-top: 20px;
+  margin: 20px 5px 0px 2px;
 }
 
 .crawl {
@@ -94,7 +96,7 @@ button {
   }
 
   100% {
-    top: -6000px;
+    top: -5000px;
     transform: rotateX(25deg) translateZ(-2500px);
   }
 }
